@@ -104,12 +104,42 @@ len(tableau) #Renvoie la longueur du tableau, renvoie 5
 
 #Exercice 1
 #Faire une fonction qui concatene 2 chaines de caractere, les séparants par un virgule
+def concatWithComma(str1, str2)
+    #Retourner str1 + ',' + str2
+    stringified1 = str(str1)
+    stringified2 = str(str2)
+    return str1 + ", " + str2
 
 #Exercice 2
 #Faire une fonction qui itere sur tous les index d'un tableau renvoyant une chaine de caractere avec l'ensemble des occurences d'un chiffre, exemple :
 #Pour tableau = [0,1,1,1,0,1,1,0,1], la fonction (tableau, 0) doit renvoyer "0, 4, 7" n'hésitez pas a implementer la premiere fonction
+tableau = [0,1,1,1,0,1,1,0,1]
+#Définir la fonction findIndex qui itere sur tableau, cherchant l'index des différentes occurences de x
+def findIndex(tableau, x):
+    #Définir i un index de départ
+    i = 0
+    #Définir chainRetour telle qu'une chaine de caractere vide
+    chaineRetour = ''
+    #Définir un booléen tel que firstTurn est true
+    
+    #Tant que i est différent du nombre d'element dans le tableau
+    while i != len(tableau):
+        #Alors j'attribue a une variable la valeur de tableau a l'index i
+        selected = tableau[i]
+        #Si selected est égal a x Et que firstTurn est True
+            #Alors on assigne a chaineRetour le retour de str(i)
+            #Changer la valeur de firstTurn a False
+        #Sinon si selected est égal a x
+        if selected == x
+            #Alors j'assigne le retour de concatwithComma tel que : concatWithComma(chaineRetour, i) à chaineRetour
+            chaineRetour = concatWithComma(chaineRetour, i)
+        #J'incrémente i de 1
+        i = i + 1    
+    #Retourne la chaine retour
+    return chaineRetour
 
 #Exercice 3
 #Renvoyer/Afficher un message
+msg=str(input("Entrez votre message : ")) print(msg)
 
 #FIN
