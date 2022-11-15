@@ -1,19 +1,25 @@
 from random import *
-choix = ["pierre", "feuille", "ciseaux"] 
-joueur = input("Faire une partie de pierre feuille ciseaux ? \n>")
+choix = ["pierre", "feuille", "ciseaux"]
 ordi = choix[randint(0,2)]
-nomJoueur = input("Entrez votre pseudo : \n")
-nomOrdi = input("Entrez le pseudo de votre adversaire : \n")
-
+rejouer = 0
 scoreOrdi = 0
 scoreJoueur = 0
 
-if joueur == "yes" or "oui":
-    rejouer = True
-else:
-    rejouer = False
+while rejouer == 0:
+    joueur = input("Faire une partie de pierre feuille ciseaux ? \n>")
+    if joueur == "yes" or joueur == "oui":
+        rejouer = 1
+    elif joueur == "no" or joueur == "non":
+        rejouer = 2
+        print("Jeu terminé")
+    else:
+        rejouer == 0
+        print("Erreur, veuillez entrer oui ou non")
 
-while rejouer == True: 
+nomJoueur = input("Entrez votre pseudo : \n")
+nomOrdi = input("Entrez le pseudo de votre adversaire : \n")
+
+while rejouer == 1:
     ordi = choix[randint(0,2)]
     joueur = input("Pierre, feuille ou ciseaux \n>")
     if joueur == "ciseaux" or joueur == "Ciseaux":
@@ -55,18 +61,22 @@ while rejouer == True:
     if scoreJoueur == 3:
         print("Félicitations, tu remporté la partie")
         print(nomJoueur + " : " + str(scoreJoueur)  +"\n"+ "" + nomOrdi + " : " + str(scoreOrdi) )
-        rejouer = False
-        rejouer = input("Voulez-vous rejouer ?\n")
-        if joueur == "yes" or "oui":
-            rejouer = True
+        rejouer = 0
+        joueur = input("Voulez-vous rejouer ?\n")
+        if joueur == "yes" or joueur == "oui":
+            rejouer = 1
             scoreOrdi = 0
             scoreJoueur = 0
+        else:
+            print("Jeu terminé")
     elif scoreOrdi == 3:
         print("Dommage, tu as perdu, réessaye la prochaine fois")
         print(nomJoueur + " : " + str(scoreJoueur)  +"\n"+ "" + nomOrdi + " : " + str(scoreOrdi))
-        rejouer = False
-        rejouer = input("Voulez-vous rejouer ? \n")
-        if joueur == "yes" or "oui":
-            rejouer = True
+        rejouer = 0
+        joueur = input("Voulez-vous rejouer ? \n")
+        if joueur == "yes" or joueur == "oui":
+            rejouer = 1
             scoreOrdi = 0
             scoreJoueur = 0
+        else:
+            print("Jeu terminé")
