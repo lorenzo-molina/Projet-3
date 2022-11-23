@@ -1,6 +1,6 @@
 from random import randint
 caseJouable = True
-#joueur = input("Quel est votre pseudo ?: \n")
+joueur = input("Quel est votre pseudo ?: \n")
 coupJoueur = "X"
 coupOrdi = 'O'
 coupMilieuJoueur = False
@@ -143,6 +143,10 @@ def ia(tableau):
                 coupIA(tableau,2,0)
             elif tableau[0][1] == tableau[1][0] == coupJoueur and caseRemplie(tableau,0,0) == False :
                 coupIA(tableau,0,0)
+            elif caseRemplie(tableau,0,0) == caseRemplie(tableau,0,2) == caseRemplie(tableau,2,0) == caseRemplie(tableau,2,2) == True and caseRemplie(tableau,0,1) == False :
+                coupIA(tableau,0,1)
+            elif caseRemplie(tableau,0,0) == caseRemplie(tableau,0,2) == caseRemplie(tableau,2,0) == caseRemplie(tableau,2,2) == True and caseRemplie(tableau,1,0) == False :
+                coupIA(tableau,1,0)
             elif caseRemplie(tableau,0,2) == False :
                 coupIA(tableau,0,2)
             elif caseRemplie(tableau,2,2) == False :

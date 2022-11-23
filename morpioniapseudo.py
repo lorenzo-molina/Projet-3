@@ -119,6 +119,10 @@
                 #Alors exécuter la fonction coupIA avec pour arguments tableau, 2 et 0
             #Sinon si les index 0 et 1 de tableau valent les index 1 et 0 de tableau et coupJoueur ET le renvoi de la fonction caseRemplie avec pour arguments tableau, 0 et 0 vaut False
                 #Alors exécuter la fonction coupIA avec pour arguments tableau, 0 et 0
+            #Sinon si le renvoi de la fonction caseRemplie avec pour arguments tableau, 0 et 0 vaut le renvoi de la fonction caseRemplie avec pour arguments tableau, 0 et 2 et le renvoi de la fonction caseRemplie avec pour arguments tableau, 2 et 0 et le renvoi de la fonction caseRemplie avec pour arguments tableau, 2 et 2 et True ET le renvoi de la fonction caseRemplie avec pour arguments tableau, 0 et 1 vaut False
+                #Alors exécuter la fonction coupIA avec pour arguments tableau, 0 et 1
+            #Sinon si le renvoi de la fonction caseRemplie avec pour arguments tableau, 0 et 0 vaut le renvoi de la fonction caseRemplie avec pour arguments tableau, 0 et 2 et le renvoi de la fonction caseRemplie avec pour arguments tableau, 2 et 0 et le renvoi de la fonction caseRemplie avec pour arguments tableau, 2 et 2 et True ET le renvoi de la fonction caseRemplie avec pour arguments tableau, 1 et 0 vaut False
+                #Alors éxectuer la fonction coupIA avec pour arguments tableau, 1 et 0
             #Sinon si le renvoi de la fonction caseRemplie avec pour arguments tableau, 0 et 2 vaut False
                 #Alors exécuter la fonction coupIA avec pour arguments tableau, 0 et 2
             #Sinon si le renvoi de la fonction caseRemplie avec pour arguments tableau, 2 et 2 vaut False
