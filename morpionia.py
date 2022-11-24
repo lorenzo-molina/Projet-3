@@ -1,4 +1,5 @@
 from random import randint
+import webbrowser
 caseJouable = True
 joueur = input("Quel est votre pseudo ?: \n")
 coupJoueur = "X"
@@ -8,6 +9,8 @@ coupMilieuIA = False
 tableJeu = [["-","-","-"],["-","-","-"],["-","-","-"]]
 gameRound = 0 
 
+if joueur == "rick" or joueur == "Rick":
+    webbrowser.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
 
 def showTable(tableJeu):
     for row in tableJeu :
@@ -93,42 +96,31 @@ def bonCourage(tableau, coupDuJoueur):
         colonne = isIaWin(tableau[0][i], tableau[1][i], tableau[2][i], coupDuJoueur)
         if ligne != False :
             tableau[i][ligne[1]] = 'O'
-            print("d")
             return True
         if colonne!= False :
             tableau[colonne[1]][i] = 'O'
-            print("e")
             return True 
     diagonale1 = isIaWin(tableau[0][0], tableau[1][1], tableau[2][2], coupDuJoueur)
     diagonale2 = isIaWin(tableau[0][2], tableau[1][1], tableau[2][0], coupDuJoueur)
-    #print(diagonale1)
-    #print(diagonale2)
     if diagonale1 != False :
         tableau[diagonale1[1]][diagonale1[1]] = 'O'
-        print("f")
         return True
     if diagonale2 != False :
         tableau[diagonale2[1]][2 - diagonale2[1]] = 'O'
-        print("g")
         return True
     
     return False
 
-
 def ia(tableau):
     global gameRound, coupMilieuIA, coupMilieuJoueur
     if tableau[1][1] == '-' : 
-        print("a")
         coupMilieuIA = True
         tableau[1][1] = 'O'
     elif tableau[1][1] == 'X' and tableau[0][0] == '-':
-        print("b")
         coupMilieuJoueur = True
         tableau[0][0] = 'O'
     elif bonCourage(tableJeu, 'O') == False :
-        print("c")
         if bonCourage(tableJeu, 'X') == False :
-
             if tableau[2][2] == coupJoueur and tableau[0][0] == coupJoueur and caseRemplie(tableau,1,0) == False:
                 coupIA(tableau, 1, 0)
             elif tableau[0][2] == coupJoueur and tableau[2][0] == coupJoueur and caseRemplie(tableau,1,2) == False:
@@ -153,6 +145,7 @@ def ia(tableau):
                 coupIA(tableau,2,2)
             elif caseRemplie(tableau,2,0) == False :
                 coupIA(tableau,2,0)
+
 def game():
     global joueur, coupJoueur, tableJeu
     coupCorrect = False

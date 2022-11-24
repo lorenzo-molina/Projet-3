@@ -8,6 +8,9 @@
 #Créer un tableau tableJeu avec trois listes ["-","-","-"]
 #Associer la valeur 0 à la variable gameRound
 
+#Easter-egg
+    #Easter-egg
+
 #Définir la variable showTable avec pour argument tableJeu
     #Pour chaque ligne dans tableJeu
         #Pour chaque objet dans ligne
